@@ -1,24 +1,13 @@
-# README
+# Bot Of You
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the source code for Bot Of You, a twitter bot that imitates the style of anyone who tweets at it. It's the final iteration of my previous project You Robot, which generated a tweet length string from another user's timeline.
 
-Things you may want to cover:
+Here's how it works:
+ 
+1. It listens using the Twitter Streaming API for interactions with the bot account.
 
-* Ruby version
+2. When someone @'s the bot, the bot uses the REST API to grab all their tweets off their timeline.
 
-* System dependencies
+3. I use those tweets as a library for the Markov Chains ruby gem.
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
