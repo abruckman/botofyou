@@ -1,6 +1,6 @@
 # Bot Of You
 
-This is the source code for Bot Of You, a twitter bot that imitates the style of anyone who tweets at it. It's the final iteration of my previous project You Robot, which generated a tweet length string from another user's timeline.
+This is the source code for [Bot Of You](https://twitter.com/BotOfYou), a twitter bot that imitates the style of anyone who tweets at it. It's the final iteration of my previous project You Robot, which generated a tweet length string from another user's timeline.
 
 Here's how it works:
  
