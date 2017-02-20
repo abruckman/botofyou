@@ -1,0 +1,1 @@
+worker: ruby botofyou.rb
