@@ -8,11 +8,11 @@ Here's how it works:
 
 2. When someone @'s the bot, the bot uses the REST API to grab their last 200 or so tweets off their timeline.
 
-3. I clean those tweets up to use as a library for the Markov Chains ruby gem.
+3. BotOfYou cleans those tweets up to use as training data for the Markov Chains ruby gem.
 
-4. I use the Markov Chains ruby gem to generate two sentences with 100-120 characters each to use as tweets.
+4. BotOfYou uses the Markov Chains ruby gem to generate two sentences with 100-120 characters each to use as tweets.
 
-5. I post those two sentences as tweets in reply to the post that @'d me in the first place (two because that increases the chance one of them will be good)
+5. BotofYou post those two sentences as tweets in reply to the post that @'d me in the first place (two because that increases the chance one of them will be good)
 
 ## Installation
 
