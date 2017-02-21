@@ -10,9 +10,9 @@ Here's how it works:
 
 3. I clean those tweets up to use as a library for the Markov Chains ruby gem.
 
-4. I use the Markov Chains ruby gem to generate two sentances with 100-120 characters each to use as tweets.
+4. I use the Markov Chains ruby gem to generate two sentences with 100-120 characters each to use as tweets.
 
-5. I post those two sentances as tweets in reply to the post that @'d me in the first place (two because that increases the chance one of them will be good)
+5. I post those two sentences as tweets in reply to the post that @'d me in the first place (two because that increases the chance one of them will be good)
 
 ## Installation
 
