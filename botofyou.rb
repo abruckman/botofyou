@@ -9,13 +9,11 @@ loop do
           p "this is a repeat"
         else
           library = create_library(object.user.screen_name)
-          2.times do
-            reply_content = new_tweet(library, object.user.screen_name)
-            reply_id = object.id
-            p reply_content
+          reply_content = new_tweet(library, object.user.screen_name)
+          reply_id = object.id
+          p reply_content
 
-            $rest_client.update(reply_content, in_reply_to_status_id: reply_id)
-          end
+          $rest_client.update(reply_content, in_reply_to_status_id: reply_id)
         end
         # we are very close here also IDK about this gem
       when Twitter::DirectMessage

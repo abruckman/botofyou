@@ -36,13 +36,20 @@ def create_library(handle)
 end
 
 def new_tweet(library, target_user)
-    generator =MarkovChains::Generator.new(library)
-    tweet = ''
-    until tweet.length.between?(90,120)
-      tweet = generator.get_sentences(1)
-      tweet = tweet[0]
+  generator =MarkovChains::Generator.new(library)
+  tweet = ''
+  count = 0
+  until tweet.length.between?(90,120) || count == 25
+
+    tweet = generator.get_sentences(1)
+    tweet = tweet[0]
+    count += 1
+    if count >=25
+      tweet = "uh-oh looks like I short circuted, if you try again, theres a 30% chance it works!"
     end
-    tweet = ".@#{target_user} " + tweet
+
   end
+  tweet = ".@#{target_user} " + tweet
+end
 
 p new_tweet(create_library("cushbomb"), "botofyou")
