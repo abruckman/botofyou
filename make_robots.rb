@@ -39,12 +39,12 @@ def new_tweet(library, target_user)
   generator =MarkovChains::Generator.new(library)
   tweet = ''
   count = 0
-  until tweet.length.between?(90,120) || count == 25
+  until tweet.length.between?(90,120) || count == 75
 
     tweet = generator.get_sentences(1)
     tweet = tweet[0]
     count += 1
-    if count >=25
+    if count >=75
       tweet = "uh-oh looks like I short circuted, if you try again, theres a 30% chance it works!"
     end
 
