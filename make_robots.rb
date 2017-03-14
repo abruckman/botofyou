@@ -91,9 +91,9 @@ def check_fails(library, target_user)
 end
 
 
-check_library = create_library("goldfishdreams_")
+check_library = create_library("cushbomb")
 
-check_fails(check_library, "goldfishdreams_")
+check_fails(check_library, "cushbomb")
 3.times do
-  p new_tweet(check_library, "goldfishdreams_")
+  p new_tweet(create_library(cushbomb), "cushbomb")
 end
