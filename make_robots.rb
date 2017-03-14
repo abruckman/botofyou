@@ -44,7 +44,7 @@ def new_tweet(library, target_user)
     tweet = generator.get_sentences(1)
     tweet = tweet[0]
     count += 1
-    if count >= 75 && count < 120 && tweet.length > 120
+    if count >= 75 && count < 300 && tweet.length > 120
       tweet = tweet.slice(0, 119)
     elsif count >=300
       tweet = "uh-oh looks like I short circuted, if you try again, theres a 30% chance it works!"
@@ -72,7 +72,7 @@ def check_fails(library, target_user)
       elsif tweet.length < 65
         too_short +=1
       end
-      if count >= 75 && count < 120 && tweet.length > 120
+      if count >= 75 && count < 300 && tweet.length > 120
         tweet = tweet.slice(0, 119)
       elsif count >=300
         tweet = "uh-oh looks like I short circuted, if you try again, theres a 30% chance it works!"
@@ -95,5 +95,5 @@ check_library = create_library("cushbomb")
 
 check_fails(check_library, "cushbomb")
 3.times do
-  p new_tweet(create_library(cushbomb), "cushbomb")
+  p new_tweet(create_library("cushbomb"), "cushbomb")
 end
