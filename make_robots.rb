@@ -39,12 +39,14 @@ def new_tweet(library, target_user)
   generator =MarkovChains::Generator.new(library)
   tweet = ''
   count = 0
-  until tweet.length.between?(90,120) || count == 75
+  until tweet.length.between?(90,120)
 
     tweet = generator.get_sentences(1)
     tweet = tweet[0]
     count += 1
-    if count >=75
+    if count >= 75 && count < 120 && tweet.length > 120
+      tweet = tweet.slice(0, 119)
+    elsif count >=300
       tweet = "uh-oh looks like I short circuted, if you try again, theres a 30% chance it works!"
     end
 
@@ -52,4 +54,46 @@ def new_tweet(library, target_user)
   tweet = ".@#{target_user} " + tweet
 end
 
-p new_tweet(create_library("cushbomb"), "botofyou")
+def check_fails(library, target_user)
+  fails = 0
+  too_big = 0
+  too_short = 0
+  200.times do
+    generator =MarkovChains::Generator.new(library)
+    tweet = ''
+    count = 0
+    until tweet.length.between?(65,120)
+
+      tweet = generator.get_sentences(1)
+      tweet = tweet[0]
+      count += 1
+      if tweet.length > 120
+        too_big +=1
+      elsif tweet.length < 65
+        too_short +=1
+      end
+      if count >= 75 && count < 120 && tweet.length > 120
+        tweet = tweet.slice(0, 119)
+      elsif count >=300
+        tweet = "uh-oh looks like I short circuted, if you try again, theres a 30% chance it works!"
+        fails += 1
+      end
+
+    end
+    tweet = ".@#{target_user} " + tweet
+  end
+  p "too big"
+  p too_big
+  p "too shor"
+  p too_short
+  p "fail rate"
+  p fails
+end
+
+
+check_library = create_library("goldfishdreams_")
+
+check_fails(check_library, "goldfishdreams_")
+3.times do
+  p new_tweet(check_library, "goldfishdreams_")
+end
