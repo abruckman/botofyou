@@ -91,9 +91,9 @@ def check_fails(library, target_user)
 end
 
 
-check_library = create_library("dril")
-
-check_fails(check_library, "dril")
-3.times do
-  p new_tweet(create_library("dril"), "dril")
-end
+# check_library = create_library("dril")
+#
+# check_fails(check_library, "dril")
+# 3.times do
+#   p new_tweet(create_library("dril"), "dril")
+# end
