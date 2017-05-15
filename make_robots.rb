@@ -24,6 +24,7 @@ end
 def create_library(handle)
   user_tweets = []
 
+
   api_return = $rest_client.user_timeline(screen_name: handle, include_rts: false, count: 1000)
   api_return.each do |tweet|
      user_tweets << tweet.text
